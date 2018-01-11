@@ -20,15 +20,15 @@ android {
         }
     }
 
-//    productFlavors {
-//        free {
-//            applicationId = "com.udacity.gradle.builditbigger.free"
-//        }
-//
-//        paid {
-//            applicationId = "com.udacity.gradle.builditbigger.paid"
-//        }
-//    }
+    productFlavors {
+        free {
+            applicationId = "com.udacity.gradle.builditbigger.free"
+        }
+
+        paid {
+            applicationId = "com.udacity.gradle.builditbigger.paid"
+        }
+    }
 }
 
 dependencies {
