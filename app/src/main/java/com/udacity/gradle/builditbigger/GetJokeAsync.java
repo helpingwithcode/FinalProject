@@ -1,6 +1,5 @@
 package com.udacity.gradle.builditbigger;
 
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -16,10 +15,11 @@ import java.io.IOException;
  */
 
 public class GetJokeAsync extends AsyncTask<Void, Void, String> {
+    public static String mJoke;
     @Override
     protected String doInBackground(Void... voids) {
         MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                .setRootUrl("http://192.168.0.12:8080/_ah/api/")
+                .setRootUrl("http://10.10.3.87:8080/_ah/api/")
                 .setApplicationName("backend")
                 .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                     @Override
@@ -28,7 +28,7 @@ public class GetJokeAsync extends AsyncTask<Void, Void, String> {
                     }
                 });
         MyApi myApi = builder.build();
-        String mJoke = "";
+        mJoke = "";
         try{
             mJoke = myApi.getJoke().execute().getData();
         }

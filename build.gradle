@@ -26,6 +26,10 @@ allprojects {
     }
 }
 
+configurations.all {
+    resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+}
+
 task runTestsInLocalServer {
     dependsOn = ['startLocalServer', 'startTests', 'stopLocalServer']
 }
@@ -34,7 +38,7 @@ task stopLocalServer {
     shouldRunAfter 'startTests'
     dependsOn ':backend:appengineStop'
     doLast {
-        println "Server stopped..."
+        println "Server:stop"
     }
 }
 
@@ -42,7 +46,7 @@ task startTests {
     shouldRunAfter 'startLocalServer'
     dependsOn ':app:connectedCheck'
     doLast {
-        println "Testing finished..."
+        println "Finished test"
     }
 }
 
@@ -53,6 +57,6 @@ task startLocalServer {
         backend.extensions.appengine.daemon = true
     }
     doLast {
-        println "Server started..."
+        println "Server:start"
     }
 }

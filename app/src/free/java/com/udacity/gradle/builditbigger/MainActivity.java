@@ -16,8 +16,8 @@ import com.example.jokerandomprovider.JokeRandomProvider;
 
 public class MainActivity extends AppCompatActivity {
 
-    ProgressBar loadingPb;
-    boolean loadingJoke = false;
+    private ProgressBar loadingPb;
+    private boolean loadingJoke = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
