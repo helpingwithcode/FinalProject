@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'builditbigger'
             keyPassword 'builditbigger'
-            storeFile file('/root/AndroidStudioProjects/UdacityProjects/FinalProject/key/key.jks')
+            storeFile file('//home/helpingwithcode/UdacityProjects/GradleLesson/ud867/FinalProject/key/key.jks')
             storePassword 'builditbigger'
         }
     }
